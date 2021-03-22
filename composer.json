@@ -1,16 +1,20 @@
 {
-    "name": "frlnc/php-slack",
-    "description": "A lightweight PHP implementation of Slack's API.",
-    "keywords": ["slack"],
-    "license": "MIT",
+    "name": "alexandrmazur96/api-slack-php",
+    "description": "Easy in use, lightweight library for interaction with Slack API.",
+    "keywords": ["slack", "php slack", "slack api"],
+    "license": "Apache-2.0",
     "authors": [
         {
             "name": "Connor Parks",
             "email": "connor@connorvg.tv"
+        },
+        {
+            "name": "Olexandr Mazur",
+            "email": "alexandrmazur96@gmail.com"
         }
     ],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=7.0"
     },
     "require-dev": {
         "mockery/mockery": "~0.9",
