@@ -20,81 +20,109 @@ class Commander
      * The commands.
      *
      * @var array
+     * @link https://api.slack.com/methods
      */
     protected static $commands = [
         'api.test' => [
             'endpoint' => '/api.test',
             'token' => false,
+            'post' => true,
         ],
         'auth.test' => [
             'endpoint' => '/auth.test',
             'token' => true,
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.archive */
         'channels.archive' => [
             'token' => true,
             'endpoint' => '/channels.archive',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.create */
         'channels.create' => [
             'token' => true,
             'endpoint' => '/channels.create',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.history */
         'channels.history' => [
             'token' => true,
             'endpoint' => '/channels.history',
         ],
+        /** @deprecated please use this method instead: conversations.info */
         'channels.info' => [
             'token' => true,
             'endpoint' => '/channels.info',
         ],
+        /** @deprecated please use this method instead: conversations.invite */
         'channels.invite' => [
             'token' => true,
             'endpoint' => '/channels.invite',
         ],
+        /** @deprecated please use this method instead: conversations.join */
         'channels.join' => [
             'token' => true,
             'endpoint' => '/channels.join',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.kick */
         'channels.kick' => [
             'token' => true,
             'endpoint' => '/channels.kick',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.leave */
         'channels.leave' => [
             'token' => true,
             'endpoint' => '/channels.leave',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.list */
         'channels.list' => [
             'token' => true,
             'endpoint' => '/channels.list',
         ],
+        /** @deprecated please use this method instead: conversations.mark */
         'channels.mark' => [
             'token' => true,
             'endpoint' => '/channels.mark',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.rename */
         'channels.rename' => [
             'token' => true,
             'endpoint' => '/channels.rename',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.setPurpose */
         'channels.setPurpose' => [
             'token' => true,
             'endpoint' => '/channels.setPurpose',
             'format' => [
                 'purpose',
             ],
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.setTopic */
         'channels.setTopic' => [
             'token' => true,
             'endpoint' => '/channels.setTopic',
             'format' => [
                 'topic',
             ],
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.unarchive */
         'channels.unarchive' => [
             'token' => true,
             'endpoint' => '/channels.unarchive',
+            'post' => true,
         ],
         'chat.delete' => [
             'token' => true,
             'endpoint' => '/chat.delete',
+            'post' => true,
         ],
         'chat.postMessage' => [
             'token' => true,
@@ -103,6 +131,7 @@ class Commander
                 'text',
                 'username',
             ],
+            'post' => true,
         ],
         'chat.update' => [
             'token' => true,
@@ -110,14 +139,17 @@ class Commander
             'format' => [
                 'text',
             ],
+            'post' => true,
         ],
         'dnd.endDnd' => [
             'token' => true,
             'endpoint' => '/dnd.endDnd',
+            'post' => true,
         ],
         'dnd.endSnooze' => [
             'token' => true,
             'endpoint' => '/dnd.endSnooze',
+            'post' => true,
         ],
         'dnd.info' => [
             'token' => true,
@@ -135,21 +167,15 @@ class Commander
             'token' => true,
             'endpoint' => '/emoji.list',
         ],
-        'files.comments.add' => [
-            'token' => true,
-            'endpoint' => '/files.comments.add',
-        ],
         'files.comments.delete' => [
             'token' => true,
             'endpoint' => '/files.comments.delete',
-        ],
-        'files.comments.edit' => [
-            'token' => true,
-            'endpoint' => '/files.comments.edit',
+            'post' => true,
         ],
         'files.delete' => [
             'token' => true,
             'endpoint' => '/files.delete',
+            'post' => true,
         ],
         'files.info' => [
             'token' => true,
@@ -162,10 +188,12 @@ class Commander
         'files.revokePublicURL' => [
             'token' => true,
             'endpoint' => '/files.revokePublicURL',
+            'post' => true,
         ],
-        'files.sharedPublcURL' => [
+        'files.sharedPublicURL' => [
             'token' => true,
-            'endpoint' => '/files.sharedPublcURL',
+            'endpoint' => '/files.sharedPublicURL',
+            'post' => true,
         ],
         'files.upload' => [
             'token' => true,
@@ -180,126 +208,170 @@ class Commander
                 'initial_comment',
             ],
         ],
+        /** @deprecated please use this method instead: conversations.archive */
         'groups.archive' => [
             'token' => true,
             'endpoint' => '/groups.archive',
+            'post' => true,
         ],
-        'groups.close' => [
-            'token' => true,
-            'endpoint' => '/groups.close',
-        ],
+        /** @deprecated please use this method instead: conversations.create */
         'groups.create' => [
             'token' => true,
             'endpoint' => '/groups.create',
             'format' => [
                 'name',
             ],
+            'post' => true,
         ],
+        /** @deprecated There are no exact Conversations API equivalents for this method. */
         'groups.createChild' => [
             'token' => true,
             'endpoint' => '/groups.createChild',
         ],
+        /** @deprecated please use this method instead: conversations.history */
         'groups.history' => [
             'token' => true,
             'endpoint' => '/groups.history',
         ],
+        /** @deprecated please use this method instead: conversations.info */
         'groups.info' => [
             'token' => true,
             'endpoint' => '/groups.info',
         ],
+        /** @deprecated please use this method instead: conversations.invite */
         'groups.invite' => [
             'token' => true,
             'endpoint' => '/groups.invite',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.kick */
         'groups.kick' => [
             'token' => true,
             'endpoint' => '/groups.kick',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.leave */
         'groups.leave' => [
             'token' => true,
             'endpoint' => '/groups.leave',
+            'post' => true,
         ],
+        /** @deprecated please use these methods instead: conversations.list or users.conversations */
         'groups.list' => [
             'token' => true,
             'endpoint' => '/groups.list',
         ],
+        /** @deprecated please use this method instead: conversations.mark */
         'groups.mark' => [
             'token' => true,
             'endpoint' => '/groups.mark',
+            'post' => true,
         ],
+        /** @deprecated There are no exact Conversations API equivalents for this method. */
         'groups.open' => [
             'token' => true,
             'endpoint' => '/groups.open',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.rename */
         'groups.rename' => [
             'token' => true,
             'endpoint' => '/groups.rename',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.setPurpose */
         'groups.setPurpose' => [
             'token' => true,
             'endpoint' => '/groups.setPurpose',
             'format' => [
                 'purpose',
             ],
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.setTopic */
         'groups.setTopic' => [
             'token' => true,
             'endpoint' => '/groups.setTopic',
             'format' => [
                 'topic',
             ],
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.unarchive */
         'groups.unarchive' => [
             'token' => true,
             'endpoint' => '/groups.unarchive',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.close */
         'im.close' => [
             'token' => true,
             'endpoint' => '/im.close',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.history */
         'im.history' => [
             'token' => true,
             'endpoint' => '/im.history',
         ],
+        /** @deprecated please use these methods instead: conversations.list or users.conversations */
         'im.list' => [
             'token' => true,
             'endpoint' => '/im.list',
         ],
+        /** @deprecated please use this method instead: conversations.mark */
         'im.mark' => [
             'token' => true,
             'endpoint' => '/im.mark',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.open */
         'im.open' => [
             'token' => true,
             'endpoint' => '/im.open',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.close */
         'mpim.close' => [
             'token' => true,
             'endpoint' => '/mpim.close',
+            'post' => true,
         ],
-        'mpmim.history' => [
+        /** @deprecated please use this method instead: conversations.history */
+        'mpim.history' => [
             'token' => true,
             'endpoint' => '/mpmim.history',
         ],
+        /** @deprecated please use these methods instead: conversations.list or users.conversations */
         'mpim.list' => [
             'token' => true,
             'endpoint' => '/mpim.list',
         ],
+        /** @deprecated please use this method instead: conversations.mark */
         'mpim.mark' => [
             'token' => true,
             'endpoint' => '/mpim.mark',
+            'post' => true,
         ],
+        /** @deprecated please use this method instead: conversations.open */
         'mpim.open' => [
             'token' => true,
             'endpoint' => '/mpim.open',
+            'post' => true,
         ],
+        /**
+         * This is a legacy method only used by classic Slack apps.
+         * Use oauth.v2.access for new Slack apps.
+         */
         'oauth.access' => [
             'token' => false,
             'endpoint' => '/oauth.access',
+            'post' => true,
         ],
         'pins.add' => [
             'token' => true,
             'endpoint' => '/pins.add',
+            'post' => true,
         ],
         'pins.list' => [
             'token' => true,
@@ -308,10 +380,12 @@ class Commander
         'pins.remove' => [
             'token' => true,
             'endpoint' => '/pins.remove',
+            'post' => true,
         ],
         'reactions.add' => [
             'token' => true,
             'endpoint' => '/reactions.add',
+            'post' => true,
         ],
         'reactions.get' => [
             'token' => true,
@@ -324,6 +398,7 @@ class Commander
         'reactions.remove' => [
             'token' => true,
             'endpoint' => '/reactions.remove',
+            'post' => true,
         ],
         'rtm.start' => [
             'token' => true,
@@ -344,6 +419,7 @@ class Commander
         'stars.add' => [
             'token' => true,
             'endpoint' => '/stars.add',
+            'post' => true,
         ],
         'stars.list' => [
             'token' => true,
@@ -352,6 +428,7 @@ class Commander
         'stars.remove' => [
             'token' => true,
             'endpoint' => '/stars.remove',
+            'post' => true,
         ],
         'team.accessLogs' => [
             'token' => true,
@@ -368,14 +445,17 @@ class Commander
         'usergroups.create' => [
             'token' => true,
             'endpoint' => '/usergroups.create',
+            'post' => true,
         ],
         'usergroups.disable' => [
             'token' => true,
             'endpoint' => '/usergroups.disable',
+            'post' => true,
         ],
         'usergroups.enable' => [
             'token' => true,
             'endpoint' => '/usergroups.enable',
+            'post' => true,
         ],
         'usergroups.list' => [
             'token' => true,
@@ -384,6 +464,7 @@ class Commander
         'usergroups.update' => [
             'token' => true,
             'endpoint' => '/usergroups.update',
+            'post' => true,
         ],
         'usergroups.users.list' => [
             'token' => true,
@@ -392,6 +473,7 @@ class Commander
         'usergroups.users.update' => [
             'token' => true,
             'endpoint' => '/usergroups.users.update',
+            'post' => true,
         ],
         'users.getPresence' => [
             'token' => true,
@@ -405,17 +487,19 @@ class Commander
             'token' => true,
             'endpoint' => '/users.list',
         ],
+        /**
+         * @deprecated This method is no longer functional
+         * and the behavior it controlled is no longer offered.
+         */
         'users.setActive' => [
             'token' => true,
             'endpoint' => '/users.setActive',
+            'post' => true,
         ],
         'users.setPresence' => [
             'token' => true,
             'endpoint' => '/users.setPresence',
-        ],
-        'users.admin.invite' => [
-            'token' => true,
-            'endpoint' => '/users.admin.invite',
+            'post' => true,
         ],
     ];
 
