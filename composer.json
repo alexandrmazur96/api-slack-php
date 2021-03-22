@@ -1,5 +1,5 @@
 {
-    "name": "alexandrmazur96/api-slack-php",
+    "name": "olexandrmazur/api-slack-php",
     "description": "Easy in use, lightweight library for interaction with Slack API.",
     "keywords": ["slack", "php slack", "slack api"],
     "license": "Apache-2.0",
