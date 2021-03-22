@@ -6,7 +6,7 @@ use Frlnc\Slack\Contracts\Http\Interactor;
 use Frlnc\Slack\Contracts\Http\Response;
 use Frlnc\Slack\Contracts\Http\ResponseFactory;
 
-class CurlInteractor implements Interactor
+final class CurlInteractor implements Interactor
 {
 
     /**

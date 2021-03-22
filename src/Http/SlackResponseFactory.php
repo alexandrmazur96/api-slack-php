@@ -5,7 +5,7 @@ namespace Frlnc\Slack\Http;
 use Frlnc\Slack\Contracts\Http\Response;
 use Frlnc\Slack\Contracts\Http\ResponseFactory;
 
-class SlackResponseFactory implements ResponseFactory {
+final class SlackResponseFactory implements ResponseFactory {
 
     /**
      * {@inheritdoc}
