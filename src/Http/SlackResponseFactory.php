@@ -10,7 +10,7 @@ class SlackResponseFactory implements ResponseFactory {
     /**
      * {@inheritdoc}
      */
-    public function build(string $body, array $headers, $statusCode): Response
+    public function build(string $body, array $headers, int $statusCode): Response
     {
         return new SlackResponse($body, $headers, $statusCode);
     }
