@@ -14,13 +14,15 @@ final class CurlInteractor implements Interactor
      *
      * @var ResponseFactory
      */
-    protected $factory;
+    private $factory;
 
-    public function __construct()
+    public function __construct(ResponseFactory $responseFactory = null)
     {
         if (!extension_loaded('curl')) {
             throw new \RuntimeException('ext-curl is missing');
         }
+
+        $this->factory = $responseFactory;
     }
 
     /**
@@ -88,7 +90,7 @@ final class CurlInteractor implements Interactor
     /**
      * {@inheritdoc}
      */
-    public function setResponseFactory(ResponseFactory $factory): self
+    public function setResponseFactory(ResponseFactory $factory): Interactor
     {
         $this->factory = $factory;
 
@@ -100,6 +102,7 @@ final class CurlInteractor implements Interactor
      *
      * @param array<string, scalar> $parameters
      * @param array<string, string> $headers
+     *
      * @return resource
      */
     private function prepareRequest(string $url, array $parameters = [], array $headers = [])

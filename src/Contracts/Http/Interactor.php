@@ -30,5 +30,5 @@ interface Interactor
     /**
      * Sets the response factory to use.
      */
-    public function setResponseFactory(ResponseFactory $factory): self;
+    public function setResponseFactory(ResponseFactory $factory): Interactor;
 }
