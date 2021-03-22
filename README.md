@@ -5,6 +5,12 @@ PHP Slack
 
 An original repository - https://github.com/Frlnc/php-slack, but seems it's abandoned.
 
+### Install
+
+```
+composer require olexandrmazur/api-slack-php 
+```
+
 ### Provides
 
 * Frlnc\Slack\Contracts
@@ -58,3 +64,17 @@ if ($response['ok']) {
 
 Note that Commander will automatically format most inputs to Slack's requirements but attachments are not supported -
 you will need to manually call `$text = Commander::format($text)` to convert it.
+
+### TODO
+
+- [ ] Add all available Slack API methods
+- [ ] Fix some known bugs (allow overwriting command "format", fix files.upload with file name containing "@" symbol)
+- [ ] Add handling rate limits
+- [ ] Add unit tests
+- [ ] Add code sniffer
+- [ ] Add Psalm (or else static analysis tool) 
+- [ ] Provide github actions
+- [ ] Add more explanations about tokens and other Slack-related things to readme
+- [ ] Add more code examples to readme (or /doc folder?)
+- [ ] Consider adding something like Laravel facades
+- [ ] Consider reworking response format
