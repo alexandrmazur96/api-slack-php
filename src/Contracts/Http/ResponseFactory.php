@@ -1,15 +1,14 @@
-<?php namespace Frlnc\Slack\Contracts\Http;
+<?php
 
-interface ResponseFactory {
+namespace Frlnc\Slack\Contracts\Http;
+
+interface ResponseFactory
+{
 
     /**
      * Builds the response.
      *
-     * @param  string  $body
-     * @param  array   $headers
-     * @param  integer $statusCode
-     * @return \Frlnc\Slack\Contracts\Http\Response
+     * @param array<string, string> $headers
      */
-    public function build($body, array $headers, $statusCode);
-
+    public function build(string $body, array $headers, int $statusCode): Response;
 }

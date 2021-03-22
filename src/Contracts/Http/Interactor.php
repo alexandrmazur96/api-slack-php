@@ -1,34 +1,34 @@
-<?php namespace Frlnc\Slack\Contracts\Http;
+<?php
 
-interface Interactor {
+namespace Frlnc\Slack\Contracts\Http;
 
+interface Interactor
+{
     /**
      * Send a get request to a URL.
      *
-     * @param  string $url
-     * @param  array  $parameters
-     * @param  array  $headers
-     * @return \Frlnc\Slack\Contracts\Http\Response
+     * @param array<string, string> $parameters
+     * @param array<string, string> $headers
      */
-    public function get($url, array $parameters = [], array $headers = []);
+    public function get(string $url, array $parameters = [], array $headers = []): Response;
 
     /**
      * Send a post request to a URL.
      *
-     * @param  string $url
-     * @param  array  $urlParameters
-     * @param  array  $postParameters
-     * @param  array  $headers
-     * @return \Frlnc\Slack\Contracts\Http\Response
+     *
+     * @param array<string, string> $urlParameters
+     * @param array<string, string> $postParameters
+     * @param array<string, string> $headers
      */
-    public function post($url, array $urlParameters = [], array $postParameters = [], array $headers = []);
+    public function post(
+        string $url,
+        array $urlParameters = [],
+        array $postParameters = [],
+        array $headers = []
+    ): Response;
 
     /**
      * Sets the response factory to use.
-     *
-     * @param  \Frlnc\Slack\Contracts\Http\ResponseFactory $factory
-     * @return void
      */
-    public function setResponseFactory(ResponseFactory $factory);
-
+    public function setResponseFactory(ResponseFactory $factory): self;
 }

@@ -1,6 +1,12 @@
-<?php namespace Frlnc\Slack\Http;
+<?php
 
-class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerializable {
+namespace Frlnc\Slack\Http;
+
+use Frlnc\Slack\Contracts\Http\Response;
+use JsonSerializable;
+
+class SlackResponse implements Response, JsonSerializable
+{
 
     /**
      * The response body.
@@ -12,7 +18,7 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     /**
      * The response headers.
      *
-     * @var array
+     * @var array<string, string>
      */
     protected $headers;
 
@@ -24,11 +30,9 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     protected $statusCode;
 
     /**
-     * @param string  $body
-     * @param array   $headers
-     * @param integer $statusCode
+     * @param array<string, string> $headers
      */
-    public function __construct($body, array $headers = [], $statusCode = 404)
+    public function __construct(string $body, array $headers = [], int $statusCode = 404)
     {
         $this->body = json_decode($body, true);
         $this->headers = $headers;
@@ -38,7 +42,7 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     /**
      * {@inheritdoc}
      */
-    public function getBody()
+    public function getBody(): string
     {
         return $this->body;
     }
@@ -46,7 +50,7 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     /**
      * {@inheritdoc}
      */
-    public function getHeaders()
+    public function getHeaders(): array
     {
         return $this->headers;
     }
@@ -54,7 +58,7 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     /**
      * {@inheritdoc}
      */
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
         return $this->statusCode;
     }
@@ -62,7 +66,7 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     /**
      * {@inheritdoc}
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->toArray();
     }
@@ -70,14 +74,14 @@ class SlackResponse implements \Frlnc\Slack\Contracts\Http\Response, \JsonSerial
     /**
      * Converts the response to an array.
      *
-     * @return array
+     * @return array<string, int|string|array<string, string>>
      */
-    public function toArray()
+    public function toArray(): array
     {
         return [
             'status_code' => $this->getStatusCode(),
-            'headers'     => $this->getHeaders(),
-            'body'        => $this->getBody()
+            'headers' => $this->getHeaders(),
+            'body' => $this->getBody(),
         ];
     }
 

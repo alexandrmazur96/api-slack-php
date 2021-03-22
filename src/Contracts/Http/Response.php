@@ -1,26 +1,24 @@
-<?php namespace Frlnc\Slack\Contracts\Http;
+<?php
 
-interface Response {
+namespace Frlnc\Slack\Contracts\Http;
+
+interface Response
+{
 
     /**
      * Gets the body of the response.
-     *
-     * @return string
      */
-    public function getBody();
+    public function getBody(): string;
 
     /**
      * Gets the headers of the response.
      *
-     * @return array
+     * @return array<string, string>
      */
-    public function getHeaders();
+    public function getHeaders(): array;
 
     /**
      * Gets the status code of the response.
-     *
-     * @return integer
      */
-    public function getStatusCode();
-
+    public function getStatusCode(): int;
 }
