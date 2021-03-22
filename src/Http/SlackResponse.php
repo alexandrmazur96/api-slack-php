@@ -6,7 +6,7 @@ use Frlnc\Slack\Contracts\Http\Response;
 use JsonSerializable;
 use RuntimeException;
 
-final class SlackResponse implements Response, JsonSerializable
+class SlackResponse implements Response, JsonSerializable
 {
     /**
      * The response body.
