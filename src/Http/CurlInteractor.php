@@ -98,12 +98,11 @@ class CurlInteractor implements Interactor
     /**
      * Prepares a request using curl.
      *
-     * @param string $url [description]
-     * @param array $parameters [description]
-     * @param array $headers [description]
+     * @param array<string, scalar> $parameters
+     * @param array<string, string> $headers
      * @return resource
      */
-    protected static function prepareRequest($url, $parameters = [], $headers = [])
+    private function prepareRequest(string $url, array $parameters = [], array $headers = [])
     {
         $request = curl_init();
 
