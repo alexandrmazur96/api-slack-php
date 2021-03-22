@@ -558,7 +558,16 @@ class Commander
         $command = self::$commands[$command];
 
         if ($command['token']) {
-            $parameters = array_merge($parameters, ['token' => $this->token]);
+            if (array_key_exists('post', $command) && $command['post']) {
+                // Authorization for POST method can be provided as request parameter.
+                $parameters = array_merge($parameters, ['token' => $this->token]);
+            } else {
+                // Authorization for GET method should be provided in Authorization header.
+                $command['headers'] = array_merge(
+                    $command['headers'],
+                    ['Authorization' => 'Bearer ' . $this->token]
+                );
+            }
         }
 
         if (isset($command['format'])) {
