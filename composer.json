@@ -25,5 +25,9 @@
             "Frlnc\\Slack\\": "src/"
         }
     },
+    "suggest": {
+        "ext-curl": "CurlInteractor class require cURL extension",
+        "ext-json": "SlackResponse class require JSON extension"
+    },
     "minimum-stability": "dev"
 }

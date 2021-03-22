@@ -16,6 +16,13 @@ class CurlInteractor implements Interactor
      */
     protected $factory;
 
+    public function __construct()
+    {
+        if (!extension_loaded('curl')) {
+            throw new \RuntimeException('ext-curl is missing');
+        }
+    }
+
     /**
      * {@inheritdoc}
      */

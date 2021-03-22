@@ -4,10 +4,10 @@ namespace Frlnc\Slack\Http;
 
 use Frlnc\Slack\Contracts\Http\Response;
 use JsonSerializable;
+use RuntimeException;
 
 class SlackResponse implements Response, JsonSerializable
 {
-
     /**
      * The response body.
      *
@@ -34,6 +34,9 @@ class SlackResponse implements Response, JsonSerializable
      */
     public function __construct(string $body, array $headers = [], int $statusCode = 404)
     {
+        if (!extension_loaded('json')) {
+            throw new RuntimeException('ext-json is missing');
+        }
         $this->body = json_decode($body, true);
         $this->headers = $headers;
         $this->statusCode = $statusCode;
