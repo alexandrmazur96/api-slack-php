@@ -67,9 +67,10 @@ you will need to manually call `$text = Commander::format($text)` to convert it.
 
 ### TODO
 
-- [ ] Add all available Slack API methods
+- [x] Add all available Slack API methods
 - [ ] Fix some known bugs (allow overwriting command "format", fix files.upload with file name containing "@" symbol)
 - [ ] Add handling rate limits
+- [ ] Check mandatory parameters presented before interaction with API
 - [ ] Add unit tests
 - [ ] Add code sniffer
 - [ ] Add Psalm (or else static analysis tool) 
